@@ -1,0 +1,52 @@
+
+baseURL: "https://example.org/"
+title: "h2h2h-techblog"
+languageCode: zh-cn
+theme: PaperMod
+
+pagination:
+  pagerSize: 10
+
+enableRobotsTXT: true
+
+params:
+  env: production
+  description: "Recode my thought."
+  author: "h2h2h"
+  defaultTheme: auto
+
+  ShowReadingTime: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowToc: true
+  TocOpen: true
+
+  homeInfoParams:
+    Title: "Welcome to my tech blog👋"
+    Content: "Record technical learning, engineering practice and open source exploration."
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/h2h2h"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+    - name: article
+      url: /posts/
+      weight: 10
+    - name: category
+      url: /categories/
+      weight: 20
+    - name: tag
+      url: /tags/
+      weight: 30
+    - name: search
+      url: /search/
+      weight: 40
