@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Agent on h2h2h-techblog</title>
-    <link>http://localhost:1313/categories/agent/</link>
-    <description>Recent content in Agent on h2h2h-techblog</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Oct 2026 14:56:58 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/agent/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Multi Agent Architecture: DAG vs Mailbox</title>
-      <link>http://localhost:1313/posts/multi-agent-architecture/</link>
-      <pubDate>Fri, 16 Oct 2026 14:56:58 +0800</pubDate>
-      <guid>http://localhost:1313/posts/multi-agent-architecture/</guid>
-      <description>&lt;h1 id=&#34;multi-agent-的两种调度架构dag-vs-mailbox&#34;&gt;Multi-Agent 的两种调度架构：DAG vs Mailbox&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Agent on h2h2h-techblog</title><link>https://h2h2h-tech-blog.zhenghaohuang721.workers.dev/categories/agent/</link><description>Recent content in Agent on h2h2h-techblog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 16 Oct 2026 14:56:58 +0800</lastBuildDate><atom:link href="https://h2h2h-tech-blog.zhenghaohuang721.workers.dev/categories/agent/index.xml" rel="self" type="application/rss+xml"/><item><title>Multi Agent Architecture: DAG vs Mailbox</title><link>https://h2h2h-tech-blog.zhenghaohuang721.workers.dev/posts/multi-agent-architecture/</link><pubDate>Fri, 16 Oct 2026 14:56:58 +0800</pubDate><guid>https://h2h2h-tech-blog.zhenghaohuang721.workers.dev/posts/multi-agent-architecture/</guid><description>&lt;h1 id="multi-agent-的两种调度架构dag-vs-mailbox"&gt;Multi-Agent 的两种调度架构：DAG vs Mailbox&lt;/h1&gt;
 &lt;p&gt;假设我们正在开发一个 Coding Agent，希望它能同时派出多个 Subagent：一个分析代码，一个检查测试，最后再汇总结果。&lt;/p&gt;
 &lt;p&gt;并发启动多个 Agent 并不难，但很快会遇到几个问题：&lt;/p&gt;
 &lt;ul&gt;
@@ -22,8 +7,8 @@
 &lt;li&gt;如果两个 Subagent 在执行过程中需要相互沟通，怎么办？&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;这些问题引出了 Multi-Agent 的两种架构思路：&lt;strong&gt;基于 DAG 的中心化调度（Maka），以及基于 Mailbox 的消息驱动协作（Codex）。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;一dag将-subagent-组织成工作流&#34;&gt;一、DAG：将 Subagent 组织成工作流&lt;/h2&gt;
-&lt;h3 id=&#34;1-核心思路&#34;&gt;1. 核心思路&lt;/h3&gt;
+&lt;h2 id="一dag将-subagent-组织成工作流"&gt;一、DAG：将 Subagent 组织成工作流&lt;/h2&gt;
+&lt;h3 id="1-核心思路"&gt;1. 核心思路&lt;/h3&gt;
 &lt;p&gt;首先，将每个 Subagent 抽象成一个任务执行单元（Operator）：接收明确的任务描述和上下文，独立执行，最后返回结果。&lt;/p&gt;
 &lt;p&gt;随后，由 Main Agent 将任务组织成 DAG，描述任务之间的依赖关系。&lt;/p&gt;
 &lt;p&gt;例如：A、B 可以并发执行，但 C 必须等待 A、B 的结果。&lt;/p&gt;
@@ -35,11 +20,8 @@
 &lt;li&gt;&lt;strong&gt;Agent Runtime&lt;/strong&gt;：负责真正运行 Subagent。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;但这只是最基础的方案。实际的 Agent 任务可能运行很久，中途还可能修改计划、发生异常。因此，Maka 又引入了四个关键设计。&lt;/p&gt;
-&lt;h3 id=&#34;2-四个核心设计&#34;&gt;2. 四个核心设计&lt;/h3&gt;
+&lt;h3 id="2-四个核心设计"&gt;2. 四个核心设计&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;① Durable Intent：任务计划需要持久化&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;首先，Agent 的任务计划并不总能一次性确定。&lt;/p&gt;
 &lt;p&gt;例如，A 在调查代码时发现一个新问题，需要新增任务 D。也就是说，DAG 需要支持动态修改。&lt;/p&gt;
-&lt;p&gt;另外，如果任务执行一半程序崩溃，之前的计划也不应该丢失。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;另外，如果任务执行一半程序崩溃，之前的计划也不应该丢失。&lt;/p&gt;</description></item></channel></rss>

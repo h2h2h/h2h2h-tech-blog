@@ -1,0 +1,2 @@
+# Keep local preview output separate from the committed production assets.
+publishDir: .hugo-dev
